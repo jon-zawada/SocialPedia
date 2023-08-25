@@ -73,6 +73,7 @@ const Navbar = () => {
           </FlexBetween>
         )}
       </FlexBetween>
+
       {/* DESKTOP NAV */}
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
@@ -94,7 +95,7 @@ const Navbar = () => {
                 width: "150px",
                 borderRadius: "0.25rem",
                 p: "0.25rem 1rem",
-                "& .MuiSvgIcon-root:": {
+                "& .MuiSvgIcon-root": {
                   pr: "0.25rem",
                   width: "3rem",
                 },
@@ -118,13 +119,15 @@ const Navbar = () => {
           <Menu />
         </IconButton>
       )}
-      {/* MOBILE  NAV */}
+
+      {/* MOBILE NAV */}
       {!isNonMobileScreens && isMobileMenuToggled && (
         <Box
           position="fixed"
           right="0"
           bottom="0"
           height="100%"
+          zIndex="10"
           maxWidth="500px"
           minWidth="300px"
           backgroundColor={background}
@@ -137,11 +140,12 @@ const Navbar = () => {
               <Close />
             </IconButton>
           </Box>
+
           {/* MENU ITEMS */}
           <FlexBetween
             display="flex"
             flexDirection="column"
-            jusstifyContent="center"
+            justifyContent="center"
             alignItems="center"
             gap="3rem"
           >
@@ -166,7 +170,7 @@ const Navbar = () => {
                   width: "150px",
                   borderRadius: "0.25rem",
                   p: "0.25rem 1rem",
-                  "& .MuiSvgIcon-root:": {
+                  "& .MuiSvgIcon-root": {
                     pr: "0.25rem",
                     width: "3rem",
                   },
